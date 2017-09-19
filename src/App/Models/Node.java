@@ -1,19 +1,23 @@
 package App.Models;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
+/**
+ * Nodo del grafo. Cada nodo tiene: - La calle - La carrera - Un identificador
+ * (id) - Nodos adyacentes
+ */
 public class Node {
+
     static int n = 0;
     private final String calle;
     private final String cra;
     private final int id;
-    private ArrayList<Node> adya;
+    private final ArrayList<Node> adya;
 
     /**
-     *
-     * @param c
-     * @param cra
+     * Constructor.
+     * @param c Calle
+     * @param cra Carrera
      */
     public Node(String c, String cra) {
         this.id = Node.genId();
@@ -21,22 +25,27 @@ public class Node {
         this.cra = cra;
         this.adya = new ArrayList<>();
     }
-    
+
+    /**
+     * Autoaumentar y asignar id
+     * @return
+     */
     static int genId() {
-        n++; return n;
+        n++;
+        return n;
     }
 
     /**
-     *
-     * @return
+     * Obtener calle del nodo.
+     * @return Calle
      */
     public String getCalle() {
         return calle;
     }
 
     /**
-     *
-     * @return
+     * Obtener carrera.
+     * @return Carrera del nodo
      */
     public String getCra() {
         return cra;
@@ -44,22 +53,25 @@ public class Node {
 
     /**
      * Obtener Id del Nodo.
+     *
      * @return Numero de identificacion del nodo.
      */
     public int getId() {
         return id;
     }
-    
+
     /**
      * Añadir un nodo adyacente.
+     *
      * @param t Nodo adyacente.
      */
     public void addAdy(Node t) {
         adya.add(t);
     }
-    
+
     /**
      * Verificar si un nodo es adyacente.
+     *
      * @param c
      * @param cr
      * @return Falso o verdadero.
@@ -67,19 +79,19 @@ public class Node {
     public boolean isAdy(String c, String cr) {
         return adya.stream().anyMatch((temp) -> (temp.getCalle().equals(c) && temp.getCra().equals(cr)));
     }
-    
+
     /**
-     * Verificar si un nodo es adayante. 
+     * Verificar si un nodo es adayante.
+     *
      * @param node Nodo
-     * @return 
+     * @return Falso o verdadero.
      */
     public boolean isAdy(Node node) {
-        return adya.stream().anyMatch((temp) -> (node == temp));
+        return adya.stream().anyMatch((temp) -> (node.calle.equals(temp.calle) && node.cra.equals(temp.cra)));
     }
-  
-    // OVERRIDE
-    
+
     /**
+     * Generar representacion del nodo.
      *
      * @return
      */

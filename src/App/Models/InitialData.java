@@ -1,7 +1,7 @@
 package App.Models;
 
 public class InitialData {
-    
+
     /**
      * Lista con todos los nodos del mapa.
      */
@@ -9,14 +9,14 @@ public class InitialData {
         {"95", "58"}, {"95", "57"}, {"95", "56"},
         {"94", "59b"}, {"94", "59"}, {"94", "58"}, {"94", "57"},
         {"94", "56"}, {"94", "55"}, {"94", "54"}, {"94", "53"},
-        {"91", "57"},
-    };
-    
+        {"91", "57"},};
+
     /**
      * Lista con todos los arcos del mapa. <br><br>
+     * { "CalleA", "CarreraA", "Calle2", "Carrera2", "Distancia" }
      */
     public static final String EDGES[][] = {
-        { "95", "58", "94", "58", "10" }
+        {"95", "58", "94", "58", "10"}
     };
-    
+
 }

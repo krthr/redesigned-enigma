@@ -1,5 +1,8 @@
 package App.Models;
 
+/**
+ * Arista (o arco) entre dos nodos.
+ */
 public class Edge {
     private final Node a;
     private final Node b;
