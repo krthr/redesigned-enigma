@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class Graph {
 
-    private static final ArrayList<Node> NODES = new ArrayList<>(); // NODOS
-    private static final ArrayList<Edge> EDGES = new ArrayList<>(); // ARISTAS
+    public static final ArrayList<Node> NODES = new ArrayList<>(); // NODOS
+    public static final ArrayList<Edge> EDGES = new ArrayList<>(); // ARISTAS
 
     /**
      * Añadir nuevo nodo al grafo.
@@ -77,6 +77,19 @@ public class Graph {
         return null;
     }
     
+    /**
+     *
+     * @param a
+     * @param b
+     * @return
+     */
+    public static Edge getEdge(Node a, Node b) {
+        for (Edge temp : EDGES) {
+            if (temp.A().equals(a) && temp.B().equals(b)) return temp;
+        }
+        
+        return null;
+    }
     
     // TERMINAL
     

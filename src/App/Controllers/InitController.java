@@ -38,6 +38,8 @@ public class InitController {
         Graph.showNodes();
         addEdges();
         Graph.showEdges();
+        MainController.generateAdyacenceMatriz();
+        MainController.generateWeightsMatriz();
     }
 
 }
